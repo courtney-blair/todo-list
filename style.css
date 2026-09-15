@@ -1,0 +1,47 @@
+body {
+    background-color:#FFB6C1 ;
+    font-family: Arial, sans-serif;
+    color:#5A2653;
+    text-align: center;
+    
+}
+#status{
+    display:flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 10px;
+    justify-content: center;
+    width:100%;
+
+}
+.column{
+    background-color:#F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    
+}
+#task{
+    display:flex;
+    gap:20px;
+    align-items: center;
+    margin: 20px;
+    justify-content: center;
+}
+
+input[type="text"], input[type="date"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button{
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #5A2653;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #FF69B4;
+}
