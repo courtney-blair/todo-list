@@ -46,9 +46,14 @@ statusDropdown.addEventListener('change', function(){
     if (selectedStatus === 'completed') {
         const completedColumn = document.querySelector('#completed-column');
         completedColumn.appendChild(taskCard);
+        const historyLog = document.querySelector('#history-log');
+        const historyEntry = document.createElement("div");
+        historyEntry.textContent = `${taskText} - Completed on: ${new Date().toLocaleDateString()}`;
+        historyLog.appendChild(historyEntry);
     }
+    
+    
 });
-
-
+    
 }});  
 
