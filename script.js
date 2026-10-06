@@ -29,9 +29,26 @@ taskCard.appendChild(deleteButton);
  
 deleteButton.addEventListener('click', function(){
     taskCard.remove(); 
-
-
 });
-}});  
+statusDropdown.addEventListener('change', function(){
+    const selectedStatus = statusDropdown.value;
+    const taskCard = statusDropdown.parentElement;
 
+    if (selectedStatus === 'pending') {
+        const pendingColumn = document.querySelector('#pending-column');
+        pendingColumn.appendChild(taskCard);
+
+    }
+    if (selectedStatus === 'in-progress') {
+        const inProgressColumn = document.querySelector('#in-progress-column');
+        inProgressColumn.appendChild(taskCard);
+    }
+    if (selectedStatus === 'completed') {
+        const completedColumn = document.querySelector('#completed-column');
+        completedColumn.appendChild(taskCard);
+    }
+});
+
+
+}});  
 
