@@ -30,6 +30,7 @@ taskCard.appendChild(deleteButton);
 deleteButton.addEventListener('click', function(){
     taskCard.remove(); 
 });
+
 statusDropdown.addEventListener('change', function(){
     const selectedStatus = statusDropdown.value;
     const taskCard = statusDropdown.parentElement;
@@ -37,22 +38,30 @@ statusDropdown.addEventListener('change', function(){
     if (selectedStatus === 'pending') {
         const pendingColumn = document.querySelector('#pending-column');
         pendingColumn.appendChild(taskCard);
-
     }
+
     if (selectedStatus === 'in-progress') {
         const inProgressColumn = document.querySelector('#in-progress-column');
         inProgressColumn.appendChild(taskCard);
     }
+
     if (selectedStatus === 'completed') {
         const completedColumn = document.querySelector('#completed-column');
         completedColumn.appendChild(taskCard);
-        const historyLog = document.querySelector('#history-log');
-        const historyEntry = document.createElement("div");
-        historyEntry.textContent = `${taskText} - Completed on: ${new Date().toLocaleDateString()}`;
-        historyLog.appendChild(historyEntry);
+        deleteButton.remove();
+
+        const submitButton = document.createElement("button");
+        submitButton.textContent = "Submit";
+        taskCard.appendChild(submitButton);
+
+        submitButton.addEventListener('click', function(){
+            const historyLog = document.querySelector('#history-log');
+            const historyEntry = document.createElement("div");
+            historyEntry.textContent = `${taskText} - Completed on: ${new Date().toLocaleDateString()}`;
+            historyLog.appendChild(historyEntry);
+            taskCard.remove();
+        });
     }
-    
-    
 });
     
 }});  
