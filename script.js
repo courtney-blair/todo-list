@@ -71,4 +71,10 @@ addButton.addEventListener('click', function(){
         taskInput.value = "";
         dateInput.value = "";
     }
+    
+});
+const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+allTasks = savedTasks;
+allTasks.forEach(function(task) {
+    createTaskCard(task.text, task.date, task.status);
 });
