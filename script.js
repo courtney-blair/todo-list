@@ -1,6 +1,7 @@
 const dateInput = document.querySelector('#date-input');
 const taskInput = document.querySelector('#task-input');
 const addButton = document.querySelector('button');    
+let allTasks =[];
 
 addButton.addEventListener('click', function(){
     const taskText = taskInput.value;
@@ -10,6 +11,8 @@ addButton.addEventListener('click', function(){
 if (taskText !== "") 
         {const taskCard = document.createElement("div");
 taskCard.textContent = `${taskText} - Due: ${dueDate}`;
+allTasks.push({ text: taskText, date: dueDate, status: "pending" });
+
 
 const statusDropdown = document.createElement("select");
 statusDropdown.innerHTML = `
