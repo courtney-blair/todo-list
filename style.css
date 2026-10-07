@@ -53,8 +53,9 @@ button:hover {
     background-color: #FF69B4;
 }
 @media (max-width: 600px) {
-    #status {
+    #status, #task {
         flex-direction: column;
     }
    
 }
+
