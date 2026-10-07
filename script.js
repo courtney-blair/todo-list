@@ -12,7 +12,7 @@ if (taskText !== "")
         {const taskCard = document.createElement("div");
 taskCard.textContent = `${taskText} - Due: ${dueDate}`;
 allTasks.push({ text: taskText, date: dueDate, status: "pending" });
-
+localStorage.setItem("tasks", JSON.stringify(allTasks));
 
 const statusDropdown = document.createElement("select");
 statusDropdown.innerHTML = `
